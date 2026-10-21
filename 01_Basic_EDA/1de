@@ -1,0 +1,11 @@
+SELECT
+    COUNT (BESLUT) AS Total,
+    COUNT(CASE
+        WHEN BESLUT = 'Beviljad'
+        THEN 1 END) AS Beviljad,
+    COUNT(CASE
+        WHEN BESLUT = 'Avslag'
+        THEN 1 END) AS Avslag
+FROM myhresults
+    WHERE UTBILDNINGSOMRÅDE = 'Data/IT';
+EXIT
