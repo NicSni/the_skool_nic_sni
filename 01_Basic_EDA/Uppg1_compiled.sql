@@ -1,0 +1,63 @@
+-- a
+SELECT
+    UTBILDNINGSOMRÅDE, COUNT (*) AS Quantity
+FROM myhresults
+GROUP BY UTBILDNINGSOMRÅDE
+ORDER BY Quantity DESC;
+EXIT
+
+--b +c
+SELECT
+    UTBILDNINGSOMRÅDE,
+    COUNT (BESLUT) AS Total,
+    COUNT(CASE
+        WHEN BESLUT = 'Beviljad'
+        THEN 1 END) AS Beviljad,
+    COUNT(CASE
+        WHEN BESLUT = 'Avslag'
+        THEN 1 END) AS Avslag
+FROM myhresults
+GROUP BY UTBILDNINGSOMRÅDE;
+EXIT
+
+--d+e
+SELECT
+    DISTINCT UTBILDNINGSNAMN,
+    COUNT (BESLUT) AS Total,
+    COUNT(CASE
+        WHEN BESLUT = 'Beviljad'
+        THEN 1 END) AS Beviljad,
+    COUNT(CASE
+        WHEN BESLUT = 'Avslag'
+        THEN 1 END) AS Avslag
+FROM myhresults
+    WHERE UTBILDNINGSOMRÅDE = 'Data/IT'
+    GROUP BY UTBILDNINGSNAMN;
+EXIT
+
+--h
+SELECT 
+    UTBILDNINGSOMRÅDE,
+    BESLUT,
+    COUNT (STUDIEFORM) AS Total,
+    COUNT (CASE WHEN STUDIEFORM = 'Bunden' THEN 1 END) AS Bunden,
+    COUNT (CASE WHEN STUDIEFORM = 'Distans' THEN 1 END) AS Distans,
+    ROUND(
+    1.0 * COUNT(CASE WHEN STUDIEFORM = 'Bunden' THEN 1 END)
+        / NULLIF(COUNT(STUDIEFORM), 0),2) AS Andel_Bunden,
+    ROUND(
+    1.0 * COUNT(CASE WHEN STUDIEFORM = 'Distans' THEN 1 END)
+        / NULLIF(COUNT(STUDIEFORM), 0),2) AS Andel_Distans
+FROM myhresults
+    WHERE BESLUT = 'Beviljad'
+    GROUP BY UTBILDNINGSOMRÅDE, BESLUT;
+EXIT
+
+--g
+
+ SELECT
+    COUNT(UTBILDNINGSNAMN) AS ANTAL_UTBILDNINGAR
+FROM myhresults
+    WHERE UTBILDNINGSNAMN LIKE '%AI%';
+EXIT
+
