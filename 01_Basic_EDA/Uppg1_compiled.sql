@@ -35,12 +35,23 @@ FROM myhresults
     GROUP BY UTBILDNINGSNAMN;
 EXIT
 
---g)
-
-ffuuuuuuuuuuuuuck.....
+--g) QTY_beviljade 5 first rows
 
 
---h)
+SELECT
+    LÄN,
+    COUNT(CASE
+        WHEN BESLUT = 'Beviljad'
+        THEN 1 END) AS QTY_Beviljade
+FROM myhresults
+    GROUP BY LÄN
+    ORDER BY QTY_Beviljade DESC
+FETCH FIRST 5 ROWS ONLY;
+
+EXIT
+
+
+--h) Place bound/distance based on edu area. also added to show only the approved.
 SELECT 
     UTBILDNINGSOMRÅDE,
     BESLUT,
@@ -58,7 +69,7 @@ FROM myhresults
     GROUP BY UTBILDNINGSOMRÅDE, BESLUT;
 EXIT
 
---i
+--i) Occurence of "AI"
 
  SELECT
     COUNT(UTBILDNINGSNAMN) AS ANTAL_UTBILDNINGAR
@@ -66,3 +77,6 @@ FROM myhresults
     WHERE UTBILDNINGSNAMN LIKE '%AI%';
 EXIT
 
+
+
+----------THE END---------------------
