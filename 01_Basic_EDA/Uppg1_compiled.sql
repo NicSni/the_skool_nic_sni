@@ -1,4 +1,4 @@
--- a
+-- a) QTY UTB edu area Order by QTY DESC
 SELECT
     UTBILDNINGSOMRÅDE, COUNT (*) AS Quantity
 FROM myhresults
@@ -6,7 +6,7 @@ GROUP BY UTBILDNINGSOMRÅDE
 ORDER BY Quantity DESC;
 EXIT
 
---b +c
+--b+c) qty Accepted/denied edu area 
 SELECT
     UTBILDNINGSOMRÅDE,
     COUNT (BESLUT) AS Total,
@@ -20,7 +20,7 @@ FROM myhresults
 GROUP BY UTBILDNINGSOMRÅDE;
 EXIT
 
---d+e
+--d+e) qty acc/den per edu name in Data/IT
 SELECT
     DISTINCT UTBILDNINGSNAMN,
     COUNT (BESLUT) AS Total,
@@ -35,7 +35,12 @@ FROM myhresults
     GROUP BY UTBILDNINGSNAMN;
 EXIT
 
---h
+--g)
+
+ffuuuuuuuuuuuuuck.....
+
+
+--h)
 SELECT 
     UTBILDNINGSOMRÅDE,
     BESLUT,
@@ -53,7 +58,7 @@ FROM myhresults
     GROUP BY UTBILDNINGSOMRÅDE, BESLUT;
 EXIT
 
---g
+--i
 
  SELECT
     COUNT(UTBILDNINGSNAMN) AS ANTAL_UTBILDNINGAR
