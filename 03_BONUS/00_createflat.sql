@@ -1,0 +1,6 @@
+SET LOADFORMAT XLSX
+LOAD TABLE myhflat 'myhresults25x.xlsx' NEW
+
+COMMIT;
+
+EXIT
