@@ -11,7 +11,7 @@ As a very messy person, this will guide you, the techer, to the relevant parts s
 ### Assignment 2 and 3  
 (Combined directory for these two as 2 didn't require many files.)  
   
-- [Notes from stakeholeder interview and notes on queries for assignment 3](02_stakeholder_plus_DDD/README.md)
+- [Notes from stakeholder interview and notes on queries for assignment 3](02_stakeholder_plus_DDD/README.md)
 - [Compiled SQL Queries for assignment 3](02_stakeholder_plus_DDD/Uppg3.sql)
   
 ### Assignment 4 (BONUS)  
@@ -21,6 +21,11 @@ As a very messy person, this will guide you, the techer, to the relevant parts s
 - This is it.  
   
 ### Assignment 6
-- [LINK HERE sometime]()
+- Uploaded to studentportal.
 
+--------------------------------------------------------------------------
+
+### LLM disclaimer
+LLM have been used sparingly, mostly to help check code, but also to help explain on rare ocasions.
+(It's quite embarissing how many times I've missed a comma and been to tired to see the flaw myself..)
 
